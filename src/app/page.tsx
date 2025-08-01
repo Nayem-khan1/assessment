@@ -1,14 +1,13 @@
-import { Product } from '@/types/types';
-import axios from 'axios';
-import ProductCard from '@/components/ProductCard';
+import { Product } from "@/types/types";
+import axios from "axios";
+import ProductCard from "@/components/ProductCard";
 
 async function getProducts(): Promise<Product[]> {
   try {
-    const response = await axios.get('https://fakestoreapi.com/products');
+    const response = await axios.get("https://fakestoreapi.com/products");
     return response.data;
   } catch (error) {
-    console.error('Failed to fetch products:', error);
-    // In a real app, you'd want to handle this error more gracefully
+    console.error("Failed to fetch products:", error);
     return [];
   }
 }
