@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# E-Commerce Frontend Assessment
+
+This is a fully functional e-commerce frontend application built as part of a technical assessment. The project demonstrates best practices in modern frontend development using Next.js, TypeScript, Redux Toolkit, and Tailwind CSS.
+
+## Features
+
+- **Home Page:** Fetches and displays a list of products from the Fake Store API in a responsive grid.
+- **Product Details Page:** Statically generated pages for each product with detailed information and dynamic SEO metadata.
+- **Shopping Cart:** Users can add, remove, and update the quantity of items in their cart.
+- **Checkout:** A validated form to collect customer information and place an order.
+- **Order Management:** A page to view a list of all previously placed orders.
+- **State Management:** Centralized state management for the cart and orders using Redux Toolkit.
+- **Responsive Design:** The application is fully responsive and mobile-friendly.
+
+## Tech Stack
+
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** Redux Toolkit
+- **Data Fetching:** Axios
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- npm or yarn
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone <repository-url>
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd <project-directory>
+    ```
+3.  Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Development Server
+
+To start the development server, run the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Folder Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project follows a modular and organized folder structure:
 
-## Learn More
+```
+src
+├── app/              # Next.js App Router pages and layouts
+│   ├── (pages)/      # Page components (e.g., page.tsx, product/[productId]/page.tsx)
+│   └── layout.tsx    # Root layout for the application
+├── components/       # Reusable React components (Navbar, ProductCard, etc.)
+├── store/            # Redux Toolkit setup
+│   ├── cartSlice.ts  # Reducer and actions for the shopping cart
+│   ├── orderSlice.ts # Reducer and actions for orders
+│   ├── store.ts      # Redux store configuration
+│   └── StoreProvider.tsx # Provider component to wrap the app
+├── types/            # TypeScript type definitions (Product, Order, etc.)
+└── utils/            # Utility functions (currently empty)
+public/               # Static assets
+├── robots.txt        # SEO instructions for web crawlers
+└── sitemap.xml       # SEO sitemap for page indexing
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Redux Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+State management is handled by Redux Toolkit, which simplifies the process of writing Redux logic.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   **`cartSlice.ts`**: Manages all state related to the shopping cart. It includes actions for adding, removing, incrementing, and decrementing items.
+-   **`orderSlice.ts`**: Manages the list of submitted orders. It includes an action for adding a new order to the state after a successful checkout.
+-   **`store.ts`**: This file configures and creates the Redux store, combining the reducers from the different slices.
+-   **`StoreProvider.tsx`**: A client-side component that wraps the root layout of the application, making the Redux store available to all components in the tree.
 
-## Deploy on Vercel
+## SEO Implementation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Several SEO best practices have been implemented to improve the site's visibility and ranking on search engines.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-   **Dynamic Metadata**: The product details page (`/product/[id]`) uses Next.js's `generateMetadata` function to create unique `<title>` and `<meta name="description">` tags for each product. This helps search engines understand the content of each page.
+-   **`robots.txt`**: A `public/robots.txt` file is included to instruct search engine crawlers on which pages to index. It also includes a link to the sitemap.
+-   **`sitemap.xml`**: A `public/sitemap.xml` file is provided to help search engines discover and crawl the site's most important pages. For this project, it is static, but it could be dynamically generated in a larger application.
+-   **Semantic HTML**: The application uses semantic HTML5 elements such as `<main>`, `<header>`, `<footer>`, `<nav>`, and `<section>` to provide better structure and improve accessibility and SEO.
+-   **Image Optimization**: All images are rendered using the Next.js `<Image>` component, which provides automatic optimization, resizing, and lazy loading. All images also include descriptive `alt` tags.
