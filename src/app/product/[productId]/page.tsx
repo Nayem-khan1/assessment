@@ -32,7 +32,8 @@ async function getProduct(id: string): Promise<Product | null> {
 
 // Generate dynamic metadata for SEO
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const product = await getProduct(params.productId);
+  const { productId } = await params;
+  const product = await getProduct(productId);
   if (!product) {
     return {
       title: 'Product not found',
@@ -46,7 +47,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProduct(params.productId);
+  const { productId } = await params;
+  const product = await getProduct(productId);
 
   if (!product) {
     return <div>Product not found.</div>;
