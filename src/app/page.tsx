@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import Carousel from "@/components/carusel/Carousel";
 import OfferCard from "@/components/OfferCard";
 import Banner from "@/components/Banner";
+import StickyCart from "@/components/StickyCart";
 
 async function getProducts(): Promise<Product[]> {
   try {
@@ -21,6 +22,7 @@ export default async function Home() {
   return (
     <div>
       <div className="min-h-screen">
+        <StickyCart />
         <div className="bg-white">
           <div className="mx-auto py-5 max-w-screen-2xl px-3 sm:px-10">
             <div className="flex w-full">
