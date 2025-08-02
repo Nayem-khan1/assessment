@@ -1,4 +1,4 @@
-import { Product } from "@/types/types";
+import { Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <p className="text-charcoal-blue mt-2">${product.price.toFixed(2)}</p>
           <div className="mt-4">
             <span className="bg-dark-slate text-white text-sm font-semibold px-3 py-2 rounded-full w-full block text-center hover:bg-charcoal-blue transition-colors duration-300">
-              View Details
+              Shop Now
             </span>
           </div>
         </div>

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/store/cartSlice';
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 
 interface AddToCartButtonProps {
   product: Product;
