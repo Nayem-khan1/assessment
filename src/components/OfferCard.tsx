@@ -1,32 +1,36 @@
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
 
-const OfferCard = () => {
+interface OfferCardProps {
+  title: string;
+  discount: string;
+  imageUrl: string;
+  href: string;
+}
+
+const OfferCard = ({ title, discount, imageUrl, href }: OfferCardProps) => {
   return (
-    <div className="w-full group">
-      <div className="bg-gray-50 h-full border-2 border-secondary transition duration-150 ease-linear transform group-hover:border-primary shadow">
-        <div className="bg-pink-100 text-gray-900 px-6 py-2 border-b border-gray-300 flex items-center justify-center">
-          <h3 className="text-base font-serif font-medium ">
-            Latest Super Discount Active Coupon Code
-          </h3>
-        </div>
-        <div className="overflow-hidden">
-          <Image
-            src="/public/offer.jpg"
-            width="200"
-            height="200"
-            alt="offer image"
-          />
-
-          <Image
-            src="/public/offer2.jpg"
-            width="200"
-            height="200"
-            alt="offer image"
-          />
+    <Link href={href} className="block group">
+      <div className="relative h-48 rounded-lg overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={title}
+          layout="fill"
+          objectFit="cover"
+          className="transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4 text-center">
+          <h3 className="text-2xl font-bold">{title}</h3>
+          <p className="text-lg mt-2 bg-red-500 px-3 py-1 rounded-full">
+            {discount}
+          </p>
+          <span className="mt-4 text-sm font-semibold underline group-hover:no-underline">
+            Shop Now
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

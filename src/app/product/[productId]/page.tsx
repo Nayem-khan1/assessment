@@ -1,4 +1,4 @@
-import { Product } from '@/types/types';
+import { Product } from '@/types';
 import axios from 'axios';
 import Image from 'next/image';
 import { Metadata } from 'next';

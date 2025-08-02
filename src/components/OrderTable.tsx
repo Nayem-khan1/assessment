@@ -1,4 +1,4 @@
-import { Order } from '@/types/types';
+import { Order } from '@/types';
 
 interface OrderTableProps {
   orders: Order[];
