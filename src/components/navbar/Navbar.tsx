@@ -11,6 +11,7 @@ import MobileNav from "./MobileNav";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Shop", href: "/shop" },
+  { name: "Orders", href: "/orders" },
   { name: "Offers", href: "/offers" },
   { name: "Contact", href: "/contact" },
 ];
@@ -18,10 +19,7 @@ const navLinks = [
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const cartItems = useSelector((state: RootState) => state.cart.items);
-  const cartItemCount = cartItems.reduce(
-    (acc, item) => acc + item.quantity,
-    0
-  );
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
     <>

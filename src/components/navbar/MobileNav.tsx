@@ -21,7 +21,7 @@ const MobileNav = ({ isOpen, navLinks }: MobileNavProps) => {
       leaveFrom="transform translate-x-0"
       leaveTo="transform -translate-x-full"
     >
-      <div className="md:hidden fixed inset-0 bg-dark-slate z-20">
+      <div className="md:hidden fixed inset-0 bg-dark-slate z-20 mt-10">
         <div className="p-4">
           <nav className="flex flex-col gap-4 mt-8">
             {navLinks.map((link) => (

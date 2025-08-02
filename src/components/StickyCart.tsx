@@ -8,7 +8,7 @@ const StickyCart = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
   const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
   return (
-    <Link href="/checkout">
+    <Link href="/cart">
       <button aria-label="Cart" className="absolute">
         <div className="right-0 w-35 float-right fixed top-2/4 bottom-2/4 align-middle shadow-lg cursor-pointer z-30 hidden lg:block xl:block">
           <div className="flex flex-col items-center justify-center bg-white rounded-tl-lg p-2 text-gray-700">
