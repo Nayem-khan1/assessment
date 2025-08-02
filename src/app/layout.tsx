@@ -3,10 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "@/store/StoreProvider";
 import Footer from "@/components/Footer";
-import NavBarTop from "@/components/navbar/NavbarTop";
-import Navbar from "@/components/Navbar";
-import MobileNav from "@/components/navbar/MobileNav";
 import { Toaster } from "react-hot-toast";
+import Navbar from "@/components/navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,12 +25,8 @@ export default function RootLayout({
       >
         <Toaster />
         <StoreProvider>
-          <NavBarTop />
           <Navbar />
-          <main className="flex-grow container mx-auto px-6 py-8">
-            {children}
-          </main>
-          <MobileNav />
+          <main className="">{children}</main>
           <div className="w-full">
             <Footer />
           </div>

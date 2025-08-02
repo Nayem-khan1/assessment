@@ -37,34 +37,39 @@ const HeroCarousel = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   return (
-    <div className="embla" ref={emblaRef}>
-      <div className="embla__container">
-        {sliderData.map((item) => (
-          <div className="embla__slide relative h-96" key={item.id}>
-            <Image
-              src={item.image}
-              alt={item.title}
-              layout="fill"
-              objectFit="cover"
-              className="z-0"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white p-4">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                {item.title}
-              </h1>
-              <p className="text-lg md:text-xl mb-6 max-w-2xl">
-                {item.info}
-              </p>
-              <Link
-                href={item.url}
-                className="bg-white text-dark-slate font-bold py-3 px-8 rounded-lg hover:bg-light-blue-grey transition-colors"
-              >
-                {item.buttonName}
-              </Link>
+    <div className="rounded-lg">
+      <div className="embla rounded-lg" ref={emblaRef}>
+        <div className="embla__container rounded-lg">
+          {sliderData.map((item) => (
+            <div
+              className="embla__slide relative h-96 rounded-lg"
+              key={item.id}
+            >
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                objectFit="cover"
+                className="z-0 rounded-lg"
+              />
+              <div className="absolute inset-0 bg-black/35 z-10 rounded-lg"></div>
+              <div className="absolute inset-0 z-20 flex items-center justify-start text-left text-white p-6 md:p-12">
+                <div className="max-w-xl">
+                  <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                    {item.title}
+                  </h1>
+                  <p className="text-base md:text-xl mb-6">{item.info}</p>
+                  <Link
+                    href={item.url}
+                    className="bg-white text-dark-slate font-bold py-3 px-8 rounded-lg hover:bg-light-blue-grey transition-colors"
+                  >
+                    {item.buttonName}
+                  </Link>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

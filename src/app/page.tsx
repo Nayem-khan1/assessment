@@ -5,7 +5,7 @@ import HeroCarousel from "@/components/carusel/HeroCarousel";
 import OffersSlider from "@/components/OffersSlider";
 import StickyCart from "@/components/StickyCart";
 import Newsletter from "@/components/Newsletter";
-import Footer from "@/components/Footer";
+import OfferCard from "@/components/OfferCard";
 
 async function getProducts(): Promise<Product[]> {
   try {
@@ -23,13 +23,14 @@ export default async function Home() {
   return (
     <main>
       <StickyCart />
-      <HeroCarousel />
       <div className="mx-auto py-12 max-w-screen-2xl px-3 sm:px-10">
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">
-            Special Offers
-          </h1>
-          <OffersSlider />
+        <div className="flex w-full">
+          <div className="flex-shrink-0 xl:pr-6 lg:block w-full lg:w-[70%]">
+            <HeroCarousel />
+          </div>
+          <div className="w-full hidden lg:flex">
+            <OfferCard />
+          </div>
         </div>
         <div>
           <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">
@@ -43,7 +44,6 @@ export default async function Home() {
         </div>
       </div>
       <Newsletter />
-      <Footer />
     </main>
   );
 }
