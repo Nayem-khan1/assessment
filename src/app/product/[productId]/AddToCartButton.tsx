@@ -25,7 +25,7 @@ const AddToCartButton = ({ product }: AddToCartButtonProps) => {
     <div>
       <button
         onClick={handleAddToCart}
-        className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 w-full"
+        className="bg-dark-slate text-white font-semibold px-6 py-3 rounded-lg hover:bg-charcoal-blue transition-colors duration-300 w-full"
       >
         Add to Cart
       </button>
