@@ -54,8 +54,8 @@ const HeroCarousel = () => {
               />
               <div className="absolute inset-0 bg-black/35 z-10 rounded-lg"></div>
               <div className="absolute inset-0 z-20 flex items-center justify-start text-left text-white p-6 md:p-12">
-                <div className="max-w-xl">
-                  <h1 className="text-3xl md:text-5xl font-bold mb-4">
+                <div className="max-w-lg">
+                  <h1 className="text-3xl md:text-4xl font-bold mb-4">
                     {item.title}
                   </h1>
                   <p className="text-base md:text-xl mb-6">{item.info}</p>

@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <main>
       <StickyCart />
-      <div className="mx-auto py-12 max-w-screen-2xl px-3 sm:px-10">
+      <div className="mx-auto py-8 max-w-screen-2xl px-3 sm:px-10">
         <div className="flex w-full">
           <div className="flex-shrink-0 xl:pr-6 lg:block w-full lg:w-[70%]">
             <HeroCarousel />
@@ -32,8 +32,8 @@ export default async function Home() {
             <OfferCard />
           </div>
         </div>
-        <div>
-          <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">
+        <div className="py-8">
+          <h1 className="text-3xl text-center font-bold mb-8 text-charcoal-blue">
             Popular Products
           </h1>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">

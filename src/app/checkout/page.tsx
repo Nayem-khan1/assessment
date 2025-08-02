@@ -22,13 +22,15 @@ const CheckoutPage = () => {
 
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg">
-      <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">Shopping Cart</h1>
+      <h1 className="text-3xl font-bold mb-8 text-charcoal-blue">
+        Shopping Cart
+      </h1>
       {cartItems.length === 0 ? (
-        <div className="text-center">
-          <p className="text-dark-slate mb-4">Your cart is empty.</p>
+        <div className="text-center h-36">
+          <p className="text-dark-slate mb-6">Your cart is empty.</p>
           <Link
             href="/"
-            className="bg-dark-slate text-white text-sm font-semibold px-4 py-2 rounded-full hover:bg-charcoal-blue transition-colors duration-300"
+            className="bg-dark-slate text-white text-sm font-semibold mt-4 px-6 py-3 rounded-lg hover:bg-charcoal-blue transition-colors duration-300"
           >
             Continue Shopping
           </Link>
@@ -51,8 +53,12 @@ const CheckoutPage = () => {
                       className="object-contain"
                     />
                     <div>
-                      <h2 className="font-semibold text-dark-slate">{item.title}</h2>
-                      <p className="text-charcoal-blue">${item.price.toFixed(2)}</p>
+                      <h2 className="font-semibold text-dark-slate">
+                        {item.title}
+                      </h2>
+                      <p className="text-charcoal-blue">
+                        ${item.price.toFixed(2)}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">
@@ -63,7 +69,9 @@ const CheckoutPage = () => {
                       >
                         -
                       </button>
-                      <span className="px-3 py-1 text-dark-slate">{item.quantity}</span>
+                      <span className="px-3 py-1 text-dark-slate">
+                        {item.quantity}
+                      </span>
                       <button
                         onClick={() => dispatch(incrementQuantity(item.id))}
                         className="px-3 py-1 text-dark-slate hover:bg-light-blue-grey"
@@ -84,7 +92,9 @@ const CheckoutPage = () => {
           </div>
           <div className="md:col-span-1">
             <div className="p-6 border border-light-blue-grey rounded-lg bg-gray-50">
-              <h2 className="text-xl font-semibold mb-4 text-charcoal-blue">Summary</h2>
+              <h2 className="text-xl font-semibold mb-4 text-charcoal-blue">
+                Summary
+              </h2>
               <div className="flex justify-between mb-2 text-dark-slate">
                 <span>Subtotal</span>
                 <span>${totalAmount.toFixed(2)}</span>
