@@ -9,15 +9,15 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   return (
-    <div className="border border-light-blue-grey rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white">
+    <div className="border border-light-blue-grey rounded-lg overflow-hidden shadow-lg bg-white transform transition-transform duration-300 hover:scale-[1.02] animate-fadeIn">
       <Link href={`/product/${product.id}`}>
-        <div className="relative w-full h-64">
+        <div className="relative w-full h-64 overflow-hidden">
           <Image
             src={product.image}
             alt={product.title}
             layout="fill"
             objectFit="contain"
-            className="p-4"
+            className="p-4 transition-transform duration-300 group-hover:scale-105"
           />
         </div>
       </Link>
@@ -29,9 +29,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
           {product.title}
         </h2>
         <p className="text-charcoal-blue mt-2">${product.price.toFixed(2)}</p>
-        <div className="mt-4 flex justify-between items-center">
+        <div className="mt-4 flex justify-between items-center gap-2">
           <Link href={`/product/${product.id}`}>
-            <span className="bg-dark-slate text-white text-sm font-semibold px-3 py-2 rounded-lg w-full block text-center hover:bg-charcoal-blue transition-colors duration-300">
+            <span className="bg-dark-slate text-white text-sm font-semibold px-4 py-2 rounded-lg text-center hover:bg-charcoal-blue transition-colors duration-300 w-full">
               Details
             </span>
           </Link>
