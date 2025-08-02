@@ -74,21 +74,21 @@ const CheckoutForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name</label>
-        <input type="text" name="fullName" id="fullName" value={formData.fullName} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+        <label htmlFor="fullName" className="block text-sm font-medium text-dark-slate">Full Name</label>
+        <input type="text" name="fullName" id="fullName" value={formData.fullName} onChange={handleChange} className="mt-1 block w-full border-light-blue-grey rounded-md shadow-sm focus:ring-dark-slate focus:border-dark-slate" />
         {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
       </div>
       <div>
-        <label htmlFor="shippingAddress" className="block text-sm font-medium text-gray-700">Shipping Address</label>
-        <input type="text" name="shippingAddress" id="shippingAddress" value={formData.shippingAddress} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+        <label htmlFor="shippingAddress" className="block text-sm font-medium text-dark-slate">Shipping Address</label>
+        <input type="text" name="shippingAddress" id="shippingAddress" value={formData.shippingAddress} onChange={handleChange} className="mt-1 block w-full border-light-blue-grey rounded-md shadow-sm focus:ring-dark-slate focus:border-dark-slate" />
         {errors.shippingAddress && <p className="text-red-500 text-xs mt-1">{errors.shippingAddress}</p>}
       </div>
       <div>
-        <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone Number</label>
-        <input type="text" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="mt-1 block w-full border-gray-300 rounded-md shadow-sm" />
+        <label htmlFor="phone" className="block text-sm font-medium text-dark-slate">Phone Number</label>
+        <input type="text" name="phone" id="phone" value={formData.phone} onChange={handleChange} className="mt-1 block w-full border-light-blue-grey rounded-md shadow-sm focus:ring-dark-slate focus:border-dark-slate" />
         {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone}</p>}
       </div>
-      <button type="submit" className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors">
+      <button type="submit" className="w-full bg-dark-slate text-white font-semibold py-3 rounded-lg hover:bg-charcoal-blue transition-colors">
         Place Order
       </button>
     </form>
